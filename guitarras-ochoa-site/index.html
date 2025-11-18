@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guitarras Ochoa | Paracho, Michoacán</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #3D2817;
+            --color-gold: #C9A961;
+            --color-cream: #F5F1E8;
+            --color-text: #2C2C2C;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--color-text);
+            background: var(--color-cream);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(61, 40, 23, 0.1);
+        }
+
+        .nav-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            font-weight: 400;
+            letter-spacing: 0.1em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-primary);
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 300;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-gold);
+        }
+
+        .social-nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-nav a {
+            color: var(--color-primary);
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .social-nav a:hover {
+            color: var(--color-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(180deg, #FFFFFF 0%, var(--color-cream) 100%);
+            position: relative;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, transparent 20%, var(--color-cream) 80%);
+            animation: rotate 30s linear infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .logo-container {
+            position: relative;
+            z-index: 10;
+            margin-bottom: 60px;
+            animation: fadeInDown 1.2s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: var(--color-primary);
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: 0.1em;
+            animation: fadeIn 1.5s ease-out 0.3s both;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+            font-weight: 300;
+            color: var(--color-gold);
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            animation: fadeIn 1.5s ease-out 0.6s both;
+            position: relative;
+            z-index: 10;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--color-gold);
+            animation: bounce 2s infinite;
+            z-index: 10;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        /* History Section */
+        .history {
+            padding: 120px 5%;
+            background: #FFFFFF;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .history-content h2 {
+            font-size: 3rem;
+            color: var(--color-primary);
+            margin-bottom: 30px;
+        }
+
+        .history-years {
+            font-size: 0.9rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--color-gold);
+            margin-bottom: 30px;
+        }
+
+        .history-text {
+            font-size: 1rem;
+            line-height: 2;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .history-image {
+            width: 100%;
+            height: 500px;
+            background: var(--color-cream);
+            border: 1px solid rgba(61, 40, 23, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .history-image::before {
+            content: 'PARACHO';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-90deg);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 6rem;
+            color: var(--color-gold);
+            opacity: 0.1;
+            letter-spacing: 0.3em;
+        }
+
+        /* Collections Section */
+        .collections {
+            padding: 120px 5%;
+            background: var(--color-cream);
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--color-primary);
+            font-weight: 300;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 0.9rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--color-gold);
+            margin-bottom: 100px;
+            font-weight: 300;
+        }
+
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .collection-item {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .collection-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .collection-image {
+            width: 100%;
+            height: 500px;
+            background: #FFFFFF;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(61, 40, 23, 0.1);
+        }
+
+        .collection-image::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 400"><path d="M100,50 Q80,100 100,150 T100,250 Q120,300 100,350" stroke="%23C9A961" stroke-width="2" fill="none" opacity="0.3"/></svg>') center/contain no-repeat;
+            opacity: 0.4;
+        }
+
+        .collection-name {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--color-primary);
+            font-weight: 400;
+        }
+
+        .collection-level {
+            font-size: 0.85rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--color-gold);
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .collection-description {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--color-text);
+            font-weight: 300;
+            max-width: 350px;
+            margin: 0 auto 20px;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 120px 5%;
+            background: #FFFFFF;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: var(--color-cream);
+            border: 1px solid rgba(61, 40, 23, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 350px;
+            background: #FFFFFF;
+            position: relative;
+            border-bottom: 1px solid rgba(61, 40, 23, 0.1);
+        }
+
+        .product-image::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60%;
+            height: 70%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 400"><ellipse cx="100" cy="200" rx="60" ry="80" stroke="%23C9A961" stroke-width="2" fill="none"/></svg>') center/contain no-repeat;
+            opacity: 0.3;
+        }
+
+        .product-info {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .product-category {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--color-gold);
+            margin-bottom: 10px;
+        }
+
+        .product-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            margin-bottom: 15px;
+        }
+
+        .product-price {
+            font-size: 1.2rem;
+            color: var(--color-primary);
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .product-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: transparent;
+            color: var(--color-primary);
+            border: 1px solid var(--color-primary);
+            text-decoration: none;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .product-button:hover {
+            background: var(--color-primary);
+            color: var(--color-cream);
+        }
+
+        /* Distributors Section */
+        .distributors {
+            padding: 120px 5%;
+            background: var(--color-cream);
+        }
+
+        .distributors-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 500px;
+            background: #FFFFFF;
+            border: 1px solid rgba(61, 40, 23, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--color-cream) 0%, #FFFFFF 100%);
+        }
+
+        .map-placeholder svg {
+            width: 60%;
+            height: 60%;
+            opacity: 0.2;
+        }
+
+        .distributors-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .distributor-item {
+            padding: 25px;
+            background: #FFFFFF;
+            border: 1px solid rgba(61, 40, 23, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .distributor-item:hover {
+            transform: translateX(10px);
+        }
+
+        .distributor-city {
+            font-size: 1.3rem;
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--color-primary);
+            margin-bottom: 10px;
+        }
+
+        .distributor-name {
+            font-size: 0.85rem;
+            color: var(--color-gold);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .distributor-address {
+            font-size: 0.9rem;
+            color: var(--color-text);
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .distributor-contact {
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: var(--color-gold);
+        }
+
+        /* Heritage Section */
+        .heritage {
+            padding: 120px 5%;
+            background: var(--color-primary);
+            color: var(--color-cream);
+            text-align: center;
+        }
+
+        .heritage-title {
+            font-size: 3rem;
+            margin-bottom: 40px;
+            color: var(--color-gold);
+        }
+
+        .heritage-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto 60px;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .heritage-text {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1rem;
+            line-height: 2;
+            font-weight: 300;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 100px 5%;
+            background: #FFFFFF;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: var(--color-primary);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 60px;
+            background: transparent;
+            color: var(--color-primary);
+            border: 1px solid var(--color-primary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            font-weight: 300;
+        }
+
+        .cta-button:hover {
+            background: var(--color-primary);
+            color: var(--color-cream);
+        }
+
+        /* Footer */
+        footer {
+            padding: 80px 5% 40px;
+            background: var(--color-primary);
+            color: var(--color-cream);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand h3 {
+            font-size: 2rem;
+            color: var(--color-gold);
+            margin-bottom: 20px;
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            line-height: 1.8;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-social a {
+            color: var(--color-cream);
+            font-size: 1.3rem;
+            transition: color 0.3s;
+        }
+
+        .footer-social a:hover {
+            color: var(--color-gold);
+        }
+
+        .footer-column h4 {
+            font-size: 1rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-gold);
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a {
+            color: var(--color-cream);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 300;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--color-gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(201, 169, 97, 0.2);
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            font-weight: 300;
+        }
+
+        /* Decorative Lines */
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: var(--color-gold);
+            margin: 30px auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .history {
+                grid-template-columns: 1fr;
+            }
+
+            .collection-grid {
+                grid-template-columns: 1fr;
+                gap: 80px;
+            }
+
+            .distributors-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-tagline {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-logo">OCHOA</div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#historia">Historia</a></li>
+            <li><a href="#colecciones">Colecciones</a></li>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#distribuidores">Distribuidores</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <div class="social-nav">
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/52XXXXXXXXXX" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="logo-container">
+            <svg width="400" height="200" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="220" cy="200" r="120" stroke="#3D2817" stroke-width="3" fill="none"/>
+                <circle cx="220" cy="200" r="140" stroke="#C9A961" stroke-width="2" fill="none"/>
+                <g transform="translate(170, 140)">
+                    <ellipse cx="50" cy="60" rx="35" ry="45" stroke="#3D2817" stroke-width="3" fill="none"/>
+                    <path d="M 50 15 L 50 -20" stroke="#C9A961" stroke-width="4"/>
+                    <path d="M 45 -20 L 55 -20" stroke="#3D2817" stroke-width="3"/>
+                    <circle cx="50" cy="60" r="15" stroke="#3D2817" stroke-width="2" fill="none"/>
+                    <rect x="40" y="90" width="20" height="3" fill="#3D2817"/>
+                    <line x1="50" y1="15" x2="50" y2="93" stroke="#C9A961" stroke-width="0.5" opacity="0.6"/>
+                </g>
+                <g transform="translate(340, 120)">
+                    <path d="M 0,-8 L 2,-2 L 8,0 L 2,2 L 0,8 L -2,2 L -8,0 L -2,-2 Z" fill="#C9A961"/>
+                </g>
+                <text x="420" y="200" font-family="Cormorant Garamond, serif" font-size="100" font-weight="300" fill="#3D2817" letter-spacing="8">OCHOA</text>
+                <text x="420" y="250" font-family="Cormorant Garamond, serif" font-size="45" font-weight="300" fill="#C9A961" letter-spacing="12">GUITARRAS</text>
+                <text x="420" y="280" font-family="Montserrat, sans-serif" font-size="18" font-weight="300" fill="#666" letter-spacing="4">PARACHO, MICHOACÁN</text>
+            </svg>
+        </div>
+        <h1 class="hero-tagline">El Son Que Nace en Paracho</h1>
+        <p class="hero-subtitle">Desde 1985</p>
+        <div class="scroll-indicator">Descubre</div>
+    </section>
+
+    <!-- History Section -->
+    <section class="history" id="historia">
+        <div class="history-content">
+            <h2>Nuestra Historia</h2>
+            <p class="history-years">1985 — 2025 | 40 Años de Tradición</p>
+            <div class="divider" style="margin-left: 0;"></div>
+            <p class="history-text">
+                En 1985, en el corazón de Paracho, Michoacán, nació Guitarras Ochoa con un compromiso inquebrantable: preservar y elevar el arte ancestral de la luthería mexicana.
+            </p>
+            <p class="history-text">
+                Durante cuatro décadas, nuestros maestros artesanos han dedicado su vida a perfeccionar cada detalle, seleccionando las maderas más finas y aplicando técnicas transmitidas de generación en generación.
+            </p>
+            <p class="history-text">
+                Hoy, Guitarras Ochoa representa no solo la tradición de Paracho, sino el estándar de excelencia en la fabricación de instrumentos de cuerda en México y el mundo.
+            </p>
+        </div>
+        <div class="history-image"></div>
+    </section>
+
+    <!-- Collections Section -->
+    <section class="collections" id="colecciones">
+        <h2 class="section-title">Colecciones</h2>
+        <p class="section-subtitle">Tres niveles, una sola pasión</p>
+
+        <div class="collection-grid">
+            <div class="collection-item">
+                <div class="collection-image"></div>
+                <h3 class="collection-name">Principiante</h3>
+                <p class="collection-level">Tu primera rola empieza aquí</p>
+                <div class="divider"></div>
+                <p class="collection-description">
+                    El inicio perfecto. Instrumentos diseñados para quienes dan sus primeros pasos en la música, sin comprometer la calidad artesanal que nos define.
+                </p>
+            </div>
+
+            <div class="collection-item">
+                <div class="collection-image"></div>
+                <h3 class="collection-name">Estudio</h3>
+                <p class="collection-level">Para quien ya sabe a dónde va</p>
+                <div class="divider"></div>
+                <p class="collection-description">
+                    Equilibrio entre técnica y expresión. Para músicos en evolución que buscan un instrumento que acompañe su crecimiento artístico.
+                </p>
+            </div>
+
+            <div class="collection-item">
+                <div class="collection-image"></div>
+                <h3 class="collection-name">Profesional</h3>
+                <p class="collection-level">Donde la técnica se vuelve arte</p>
+                <div class="divider"></div>
+                <p class="collection-description">
+                    El más alto estándar. Instrumentos para artistas exigentes que comprenden el valor de la excelencia en cada detalle sonoro.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="galeria">
+        <h2 class="section-title">Catálogo</h2>
+        <p class="section-subtitle">Encuentra tu instrumento ideal</p>
+
+        <div class="product-grid">
+            <!-- Principiante -->
+            <div class="product-card">
+                <div class="product-image"></div>
+                <div class="product-info">
+                    <p class="product-category">Principiante</p>
+                    <h3 class="product-name">Clásica Pino</h3>
+                    <p class="product-price">$2,500 MXN</p>
+                    <a href="#contacto" class="product-button">Consultar</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image"></div>
+                <div class="product-info">
+                    <p class="product-category">Principiante</p>
+                    <h3 class="product-name">Acústica Natural</h3>
+                    <p class="product-price">$3,200 MXN</p>
+                    <a href="#contacto" class="product-button">Consultar</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image"></div>
+                <div class="product-info">
+                    <p class="product-category">Principiante</p>
+                    <h3 class="product-name">Requinto Básico</h3>
+                    <p class="product-price">$2,800 MXN</p>
+                    <a href="#contacto" class="product-button">Consultar</a>
+                </div>
+            </div>
+
+            <!-- Estudio -->
+            <div class="product-card">
+                <div class="product-image"></div>
+                <div class="product-info">
+                    <p class="product-category">Estudio</p>
+                    <h3 class="product-name">Clásica Cedro</h3>
+                    <p class="product-price">$6,500 MXN</p>
+                    <a href="#contacto" class="product-button">Consultar</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image"></div>
+                <div class="product-info">
+                    <p class="product-category">Estudio</p>
+                    <h3 class="product-name">Acústica Caoba</h3>
+                    <p class="product-price">$7,800 MXN</p>
+                    <a href="#contacto" class="product-button">Consultar</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image"></div>
+                <div class="product-info">
+                    <p class="product-category">Estudio</p>
+                    <h3 class="product-name">Guitarrón Tradicional</h3>
+                    <p class="product-price">$8,500 MXN</p>
+                    <a href="#contacto" class="product-button">Consultar</a>
+                </div>
+            </div>
+
+            <!-- Profesional -->
+            <div class="product-card">
+                <div class="product-image"></div>
+                <div class="product-info">
+                    <p class="product-category">Profesional</p>
+                    <h3 class="product-name">Concierto Premium</h3>
+                    <p class="product-price">$15,000 MXN</p>
+                    <a href="#contacto" class="product-button">Consultar</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image"></div>
+                <div class="product-info">
+                    <p class="product-category">Profesional</p>
+                    <h3 class="product-name">Acústica Palo Escrito</h3>
+                    <p class="product-price">$18,500 MXN</p>
+                    <a href="#contacto" class="product-button">Consultar</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image"></div>
+                <div class="product-info">
+                    <p class="product-category">Profesional</p>
+                    <h3 class="product-name">Vihuela Artesanal</h3>
+                    <p class="product-price">$16,800 MXN</p>
+                    <a href="#contacto" class="product-button">Consultar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Distributors Section -->
+    <section class="distributors" id="distribuidores">
+        <h2 class="section-title">Distribuidores</h2>
+        <p class="section-subtitle">Encuentra Guitarras Ochoa cerca de ti</p>
+
+        <div class="distributors-container">
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Mapa simplificado de México -->
+                        <path d="M 100,40 L 120,50 L 140,55 L 150,65 L 155,80 L 160,95 L 155,110 L 145,120 L 130,130 L 110,135 L 90,135 L 70,130 L 55,120 L 45,110 L 40,95 L 45,80 L 50,70 L 60,55 L 80,45 Z"
+                              stroke="#C9A961"
+                              stroke-width="2"
+                              fill="none"/>
+                        <!-- Puntos de distribuidores -->
+                        <circle cx="100" cy="85" r="4" fill="#3D2817"/>
+                        <circle cx="120" cy="75" r="4" fill="#3D2817"/>
+                        <circle cx="85" cy="95" r="4" fill="#3D2817"/>
+                        <circle cx="130" cy="100" r="4" fill="#3D2817"/>
+                        <circle cx="75" cy="80" r="4" fill="#3D2817"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="distributors-list">
+                <div class="distributor-item">
+                    <h3 class="distributor-city">Ciudad de México</h3>
+                    <p class="distributor-name">Casa Veerkamp</p>
+                    <p class="distributor-address">Av. Insurgentes Sur 1234, Col. Del Valle</p>
+                    <p class="distributor-contact"><i class="fas fa-phone"></i> (55) 1234-5678</p>
+                </div>
+
+                <div class="distributor-item">
+                    <h3 class="distributor-city">Guadalajara, Jalisco</h3>
+                    <p class="distributor-name">Música y Tradición</p>
+                    <p class="distributor-address">Av. Chapultepec 567, Col. Americana</p>
+                    <p class="distributor-contact"><i class="fas fa-phone"></i> (33) 9876-5432</p>
+                </div>
+
+                <div class="distributor-item">
+                    <h3 class="distributor-city">Monterrey, Nuevo León</h3>
+                    <p class="distributor-name">Instrumentos del Norte</p>
+                    <p class="distributor-address">Av. Constitución 890, Centro</p>
+                    <p class="distributor-contact"><i class="fas fa-phone"></i> (81) 2468-1357</p>
+                </div>
+
+                <div class="distributor-item">
+                    <h3 class="distributor-city">Paracho, Michoacán</h3>
+                    <p class="distributor-name">Fábrica Guitarras Ochoa</p>
+                    <p class="distributor-address">Calle Principal 123, Centro</p>
+                    <p class="distributor-contact"><i class="fas fa-phone"></i> (452) 123-4567</p>
+                </div>
+
+                <div class="distributor-item">
+                    <h3 class="distributor-city">En Línea</h3>
+                    <p class="distributor-name">Marketplaces</p>
+                    <p class="distributor-address">
+                        <a href="https://amazon.com.mx" target="_blank" style="color: var(--color-gold); text-decoration: none;">Amazon México</a> |
+                        <a href="https://mercadolibre.com.mx" target="_blank" style="color: var(--color-gold); text-decoration: none; margin-left: 10px;">Mercado Libre</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heritage Section -->
+    <section class="heritage">
+        <h2 class="heritage-title">Nuestra Esencia</h2>
+        <div class="divider" style="background: var(--color-gold);"></div>
+        <p class="heritage-quote">
+            "En Paracho, la música no se fabrica: se cultiva. Cada Guitarra Ochoa es una rama del árbol eterno del sonido."
+        </p>
+        <p class="heritage-text">
+            Desde 1985, en el corazón de Michoacán, nuestros maestros luthiers dedican su vida a un oficio que trasciende generaciones. Cada instrumento lleva consigo la historia de Paracho, el alma de México y el compromiso inquebrantable con la excelencia artesanal.
+        </p>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contacto">
+        <h2 class="cta-title">¿Listo para encontrar tu instrumento?</h2>
+        <div class="divider"></div>
+        <p style="margin-bottom: 40px; font-size: 1rem; font-weight: 300;">Contáctanos directamente por WhatsApp o visita nuestros distribuidores autorizados</p>
+        <a href="https://wa.me/52XXXXXXXXXX?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20Guitarras%20Ochoa" target="_blank" class="cta-button">
+            <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Guitarras Ochoa</h3>
+                <p>Más de 40 años cultivando el sonido auténtico de Paracho. Tradición, calidad y pasión en cada instrumento.</p>
+                <div class="footer-social">
+                    <a href="https://facebook.com/guitarrasochoa" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com/guitarrasochoa" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/guitarrasochoa" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://wa.me/52XXXXXXXXXX" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://tiktok.com/@guitarrasochoa" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#historia">Historia</a></li>
+                    <li><a href="#colecciones">Colecciones</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#distribuidores">Distribuidores</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Productos</h4>
+                <ul>
+                    <li><a href="#galeria">Línea Principiante</a></li>
+                    <li><a href="#galeria">Línea Estudio</a></li>
+                    <li><a href="#galeria">Línea Profesional</a></li>
+                    <li><a href="#galeria">Instrumentos Especiales</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Contacto</h4>
+                <ul>
+                    <li><a href="tel:+52XXXXXXXXXX">+52 (XXX) XXX-XXXX</a></li>
+                    <li><a href="mailto:contacto@guitarrasochoa.com">contacto@guitarrasochoa.com</a></li>
+                    <li>Paracho, Michoacán</li>
+                    <li>México</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Guitarras Ochoa. Todos los derechos reservados. | Paracho, Michoacán, México</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Parallax effect on hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero && scrolled < window.innerHeight) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+                hero.style.opacity = 1 - (scrolled / 600);
+            }
+        });
+
+        // Navbar background on scroll
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+                nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                nav.style.boxShadow = 'none';
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Animate collection items
+        document.querySelectorAll('.collection-item').forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(50px)';
+            item.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(item);
+        });
+
+        // Animate product cards
+        document.querySelectorAll('.product-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+            observer.observe(card);
+        });
+
+        // Animate distributor items
+        document.querySelectorAll('.distributor-item').forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateX(-30px)';
+            item.style.transition = `opacity 0.6s ease ${index * 0.15}s, transform 0.6s ease ${index * 0.15}s`;
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{
+  "name": "guitarras-ochoa-site",
+  "version": "1.0.0",
+  "description": "Sitio web oficial de Guitarras Ochoa - Fabricantes artesanales de instrumentos de cuerda en Paracho, Michoacán",
+  "main": "index.html",
+  "scripts": {
+    "dev": "serve -s . -l 3000",
+    "build": "echo 'No build step required'",
+    "preview": "serve -s . -l 3000",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "guitarras",
+    "paracho",
+    "michoacan",
+    "lutheria",
+    "artesania",
+    "instrumentos-musicales",
+    "guitarra-acustica",
+    "guitarra-clasica",
+    "guitarrón",
+    "vihuela"
+  ],
+  "author": "Guitarras Ochoa",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.1",
+    "vercel": "^32.5.6"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
